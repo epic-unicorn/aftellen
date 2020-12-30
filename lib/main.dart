@@ -59,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: controller,
               widgetBuilder: (_, CurrentRemainingTime time) {
                 if (time == null) {
+                  Vibration.vibrate();
                   return Text('Game over');
                 }
                 return Text('${time.hours}:${time.min}:${time.sec}',
