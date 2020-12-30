@@ -67,9 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: _countdownTimerController,
               widgetBuilder: (_, CurrentRemainingTime time) {
                 if (time == null) {
-                  return Text('Gelukkig nieuwjaar!',
-                      style: TextStyle(
-                          fontSize: 64.0, fontWeight: FontWeight.bold));
+                  return Video();
                 }
 
                 return Text('${time.hours} uur ${time.min} min ${time.sec} sec',
