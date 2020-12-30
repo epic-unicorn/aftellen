@@ -34,9 +34,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    // count down
     int endTime = DateTime.parse("2021-01-01 00:00:00").millisecondsSinceEpoch;
     // for testing
-    // int endTime = DateTime.now().millisecondsSinceEpoch + 5000;
+    // int endTime = DateTime.now().millisecondsSinceEpoch + 10000;
     _countdownTimerController =
         CountdownTimerController(endTime: endTime, onEnd: onEnd);
   }
@@ -71,9 +72,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   return Video();
                 }
 
-                return Text('${time.hours} uur ${time.min} min ${time.sec} sec',
-                    style:
-                        TextStyle(fontSize: 64.0, fontWeight: FontWeight.bold));
+                double width = MediaQuery.of(context).size.width;
+
+                return Column(
+                  children: [
+                    Text(
+                      'We tellen samen af:',
+                      style:
+                          TextStyle(fontSize: width * 0.05, color: Colors.grey),
+                    ),
+                    Text('${time.hours} uur ${time.min} min ${time.sec} sec',
+                        style: TextStyle(
+                            fontSize: width * 0.08,
+                            fontWeight: FontWeight.bold))
+                  ],
+                );
               },
             ),
           ],
