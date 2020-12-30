@@ -9,7 +9,8 @@ environment:
 
 dependencies:
   flutter_countdown_timer: ^2.0.0
-  video_player: ^0.11.1+2
+  youtube_player_iframe: ^1.2.0+2
+
   flutter:
     sdk: flutter
 
