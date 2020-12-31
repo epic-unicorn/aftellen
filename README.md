@@ -1,3 +1,3 @@
-# aftellen
+# Aftellen
 
-tijdelijk projectje voor oud en nieuw 2020/2021
+Tijdelijke repo voor oud en nieuw 2020/2021
