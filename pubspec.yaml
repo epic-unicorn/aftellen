@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter_countdown_timer: ^2.0.0
   youtube_player_iframe: ^1.2.0+2
+  vibration_web: ^1.6.2
+  vibration: ^1.7.3
 
   flutter:
     sdk: flutter

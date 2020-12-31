@@ -2,6 +2,7 @@ import 'package:aftellen/video.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_countdown_timer/index.dart';
+import 'package:vibration/vibration.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,9 +36,9 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     // count down
-    int endTime = DateTime.parse("2021-01-01 00:00:00").millisecondsSinceEpoch;
+    // int endTime = DateTime.parse("2021-01-01 00:00:00").millisecondsSinceEpoch;
     // for testing
-    // int endTime = DateTime.now().millisecondsSinceEpoch + 10000;
+    int endTime = DateTime.now().millisecondsSinceEpoch + 10000;
     _countdownTimerController =
         CountdownTimerController(endTime: endTime, onEnd: onEnd);
   }
@@ -49,6 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> onEnd() async {
+    vibrateOnDevices();
+
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Video()),
@@ -77,14 +80,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 return Column(
                   children: [
                     Text(
-                      'We tellen samen af:',
+                      'We tellen samen af',
                       style:
                           TextStyle(fontSize: width * 0.05, color: Colors.grey),
                     ),
-                    Text('${time.hours} uur ${time.min} min ${time.sec} sec',
+                    Text(
+                        '${time.hours ?? 0} uur ${time.min ?? 0} min ${time.sec ?? 0} sec',
                         style: TextStyle(
                             fontSize: width * 0.08,
-                            fontWeight: FontWeight.bold))
+                            fontWeight: FontWeight.w900))
                   ],
                 );
               },
@@ -93,5 +97,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  Future<void> vibrateOnDevices() async {
+    if (await Vibration.hasVibrator()) {
+      Vibration.vibrate(duration: 2000);
+    }
   }
 }
