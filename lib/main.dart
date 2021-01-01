@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aftellen naar 2021',
+      title: 'Aftellen naar 2022',
       theme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.lightBlue,
       ),
-      home: MyHomePage(title: 'Aftellen naar 2021'),
+      home: MyHomePage(title: 'Aftellen naar 2022'),
     );
   }
 }
