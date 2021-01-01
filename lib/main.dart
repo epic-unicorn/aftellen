@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     // count down
-    int endTime = DateTime.parse("2021-01-01 00:00:00").millisecondsSinceEpoch;
+    int endTime = DateTime.parse("2022-01-01 00:00:00").millisecondsSinceEpoch;
     // for testing
     // int endTime = DateTime.now().millisecondsSinceEpoch + 10000;
     _countdownTimerController =
