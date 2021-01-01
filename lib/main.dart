@@ -76,16 +76,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 return Column(
                   children: [
-                    Text(
-                      'We tellen samen af',
-                      style:
-                          TextStyle(fontSize: width * 0.05, color: Colors.grey),
-                    ),
+                    Text('2022',
+                        style: TextStyle(
+                            fontSize: width * 0.1,
+                            color: Colors.red[500],
+                            fontWeight: FontWeight.w900)),
+                    Text('${time.days ?? 0} dagen',
+                        style: TextStyle(
+                            fontSize: width * 0.03,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w900)),
                     Text(
                         '${time.hours ?? 0} uur ${time.min ?? 0} min ${time.sec ?? 0} sec',
                         style: TextStyle(
                             fontSize: width * 0.08,
-                            fontWeight: FontWeight.w900))
+                            fontWeight: FontWeight.w900)),
                   ],
                 );
               },
