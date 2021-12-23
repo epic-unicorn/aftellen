@@ -1,6 +1,5 @@
 import 'package:aftellen/video.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_countdown_timer/index.dart';
 import 'package:vibration/vibration.dart';
 
