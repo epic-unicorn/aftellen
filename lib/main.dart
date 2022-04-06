@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aftellen naar 2022',
+      title: 'Aftellen naar 2023',
       theme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.lightBlue,
       ),
-      home: MyHomePage(title: 'Aftellen naar 2022'),
+      home: MyHomePage(title: 'Aftellen naar 2023'),
     );
   }
 }
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     // count down
-    int endTime = DateTime.parse("2022-01-01 00:00:00").millisecondsSinceEpoch;
+    int endTime = DateTime.parse("2023-01-01 00:00:00").millisecondsSinceEpoch;
     // for testing
     // int endTime = DateTime.now().millisecondsSinceEpoch + 10000;
     _countdownTimerController =
